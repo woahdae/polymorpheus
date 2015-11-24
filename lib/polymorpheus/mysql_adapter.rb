@@ -125,7 +125,7 @@ module Polymorpheus
                             join(' + ')
 
         sql = %{
-          CREATE TRIGGER #{trigger_name} BEFORE #{action} ON #{table}
+          CREATE TRIGGER #{trigger_name} BEFORE #{action} ON `#{table}`
             FOR EACH ROW
             BEGIN
               IF(#{colchecks}) <> 1 THEN

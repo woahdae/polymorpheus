@@ -1,6 +1,5 @@
 ActiveRecord::Base.establish_connection({
-  adapter: 'mysql2',
-  username: 'travis',
+  adapter: 'postgresql',
   database: 'polymorpheus_test'
 })
 

@@ -2,6 +2,7 @@ require 'active_record'
 require 'polymorpheus'
 require 'spec_helper'
 require 'support/class_defs'
+require 'rspec/its'
 
 describe '.belongs_to_polymorph' do
   let(:hero) { Hero.create! }

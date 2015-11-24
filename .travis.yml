@@ -13,3 +13,4 @@ gemfile:
   - gemfiles/4.2.gemfile
 before_script:
   - mysql -e 'create database polymorpheus_test;'
+  - psql -c 'create database polymorpheus_test;' -U postgres

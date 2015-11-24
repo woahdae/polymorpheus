@@ -5,11 +5,11 @@ require 'polymorpheus'
 require 'polymorpheus/trigger'
 require 'shared_examples'
 
-if ActiveRecord::Base.connection_config[:adapter] =~ /mysql/
+if ActiveRecord::Base.connection_config[:adapter] == 'postgresql'
 
 Polymorpheus::Adapter.load!
 
-describe Polymorpheus::ConnectionAdapters::MysqlAdapter do
+describe Polymorpheus::ConnectionAdapters::PostgresqlAdapter do
 
   #######################################################
   # Setup

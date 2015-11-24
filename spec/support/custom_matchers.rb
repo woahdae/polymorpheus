@@ -26,6 +26,12 @@ RSpec::Matchers.define :match_sql do |expected|
   end
 
   def format(sql)
-    sql.gsub(/\s+/, ' ')
+    sql.dup.tap do |s|
+      s.gsub!(/\s+/, ' ')
+
+      if ActiveRecord::Base.connection_config[:adapter] == 'postgresql'
+        s.gsub!('`', '"')
+      end
+    end
   end
 end
